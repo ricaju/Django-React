@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import RSSfeed
 
-# Register your models here.
+
+
+admin.site.register(RSSfeed)
