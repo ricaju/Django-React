@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development ./project/frontend/src/index.js --output ./project/frontend/static/frontend/main.js",
-    "build": "webpack --mode production ./project/frontend/src/index.js --output ./project/frontend/static/frontend/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --mode development ./frontend/src/index.js --output ./frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./frontend/src/index.js --output ./frontend/static/frontend/main.js"
   },
   "repository": {
     "type": "git",
@@ -30,5 +29,8 @@
     "react-dom": "^16.8.4",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "react-router": "^5.0.0"
   }
 }
