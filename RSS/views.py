@@ -23,3 +23,12 @@ class TechFeeds(generics.ListCreateAPIView):
 	queryset = RSSfeed.objects.filter(category="Tech")
 	serializer_class = RSSfeedSerializer
 
+# def SearchPost(request):
+# 	queryset = RSSfeed.object.active()
+# 	query = request.GET.get("q")  #u reactu se doći atribut s name="q"
+# 	if query:
+# 		queryset = queryset.filter(
+# 			Q(category_icontains=query)|   #Q LOOKUP u djangu
+# 			Q(title_icontains=query)|
+# 			Q(creator_icontains=query)
+# 			).distinct()                  #return?
