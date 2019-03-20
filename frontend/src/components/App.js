@@ -4,7 +4,8 @@ import ReactDOM from "react-dom";
 
 class App extends Component {
 	render(){
-		return <h1>TESSSST</h1>
+		console.log("blblbl")
+		return <h1>TESSSST1111</h1>
 	}
 }
 
