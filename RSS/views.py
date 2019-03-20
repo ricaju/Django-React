@@ -4,7 +4,7 @@ from .serializers import RSSfeedSerializer
 from rest_framework import generics
 
 class ChannelList(generics.ListCreateAPIView): 
-	queryset = RSSfeed.objects.filter(category="Sport")  #nije dobro
+	queryset = RSSfeed.objects.values('category') #nije dobro
 	serializer_class = RSSfeedSerializer
 
 class AllFeeds(generics.ListCreateAPIView):

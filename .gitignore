@@ -1,3 +1,4 @@
 
 *.pyc
 django_env
+db.sqlite3
