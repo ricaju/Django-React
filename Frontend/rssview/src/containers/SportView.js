@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import AllFeeds from '../components/AllFeeds'
+import SportFeeds from '../components/SportFeeds'
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
 const listData = [];
 for (let i = 0; i < 23; i++) {
@@ -14,19 +15,19 @@ for (let i = 0; i < 23; i++) {
 }
 
 
-class AllFeedsView extends Component {
+class SportView extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			Feeds: []
+			Sport: []
 		}
 	}
 
 	componentDidMount(){
-		axios.get('http://localhost:8000/api/AllFeeds')
+		axios.get('http://localhost:8000/api/SportFeeds')
 		.then(res => {
 			this.setState({
-				Feeds: res.data
+				Sport: res.data
 			});
 			console.log(res.data);
 		});
@@ -35,9 +36,9 @@ class AllFeedsView extends Component {
 
 	render(){
 		return(
-			<AllFeeds data={this.state.Feeds}/>
+			<SportFeeds data={this.state.Sport}/>
 		)
 	}
 }
 
-export default AllFeedsView;
+export default SportView;

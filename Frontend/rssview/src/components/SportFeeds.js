@@ -10,7 +10,7 @@ const IconText = ({ type, text }) => (
   </span>
 );
 
-const AllFeeds = (props) => {
+const SportFeeds = (props) => {
 	return(		
 	  <List
 	    itemLayout="vertical"
@@ -40,4 +40,4 @@ const AllFeeds = (props) => {
 	)
 }
 
-export default AllFeeds;
+export default SportFeeds;
