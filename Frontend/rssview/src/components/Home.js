@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import AllFeedsView from '../containers/AllFeedsView';
 import SportView from '../containers/SportView';
 import ShowView from '../containers/ShowView';
+import TechView from '../containers/TechView';
 
 const { Header, Content, Footer } = Layout;
 
@@ -15,17 +16,21 @@ class Home extends Component{
 		this.state ={
 			home: true,
 			sport: false,
-			show: false
+			show: false,
+			tech: false
 		}
 	}
 	handelHome = () => {
-		this.setState({sport: false, show: false, home: true})
+		this.setState({sport: false, show: false, home: true, tech: false})
 	}
 	handelSport = () => {
-		this.setState({sport: true, show: false, home: false})
+		this.setState({sport: true, show: false, home: false, tech: false})
 	}
 	handelShow = () => {
-		this.setState({sport: false, show: true, home: false})
+		this.setState({sport: false, show: true, home: false, tech: false})
+	}
+	handelTech = () => {
+		this.setState({sport: false, show: false, home: false, tech: true})
 	}
 
  render(){
@@ -42,7 +47,7 @@ class Home extends Component{
         <Menu.Item key="1" onClick={this.handelHome}>Home</Menu.Item>
         <Menu.Item key="2" onClick={this.handelSport}>Sport</Menu.Item>
         <Menu.Item key="3" onClick={this.handelShow}>Show</Menu.Item>
-        <Menu.Item key="4">Tech</Menu.Item>
+        <Menu.Item key="4" onClick={this.handelTech}>Tech</Menu.Item>
       </Menu>
     </Header>
     <Content style={{ padding: '0 50px' }}>
@@ -55,6 +60,7 @@ class Home extends Component{
       	{this.state.home ? <AllFeedsView/> : null}
       	{this.state.sport ? <SportView/> : null}
       	{this.state.show ? <ShowView/> : null}
+      	{this.state.tech ? <TechView/> : null}
       </div>
     </Content>
     <Footer style={{ textAlign: 'center' }}>

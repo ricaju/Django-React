@@ -8,7 +8,7 @@ class App extends Component {
       <Router>
         <Switch>
           <Route path="/Home" exact={true} component={Home}/>
-        <Redirect to="/Home"/>                {/*dodati ostale routere za history.push*/}
+        <Redirect to="/Home"/>                {/*dodati ostale routere za history.push?*/}
         </Switch>
       </Router>
     );

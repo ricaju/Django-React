@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SportFeeds from '../components/SportFeeds'
+import TechFeeds from '../components/TechFeeds'
 import axios from 'axios';
 
 const listData = [];
@@ -14,19 +14,19 @@ for (let i = 0; i < 23; i++) {
 }
 
 
-class SportView extends Component {
+class TechView extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			Sport: []
+			Tech: []
 		}
 	}
 
 	componentDidMount(){
-		axios.get('http://localhost:8000/api/SportFeeds')
+		axios.get('http://localhost:8000/api/TechFeeds')
 		.then(res => {
 			this.setState({
-				Sport: res.data
+				Tech: res.data
 			});
 			console.log(res.data);
 		});
@@ -35,9 +35,9 @@ class SportView extends Component {
 
 	render(){
 		return(
-			<SportFeeds data={this.state.Sport}/>
+			<TechFeeds data={this.state.Tech}/>
 		)
 	}
 }
 
-export default SportView;
+export default TechView;
