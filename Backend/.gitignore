@@ -2,4 +2,4 @@
 *.pyc
 django_env
 db.sqlite3
-node_modules
+
