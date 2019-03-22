@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AllFeeds from '../components/AllFeeds'
+import NewsFeeds from '../components/NewsFeeds'
 import axios from 'axios';
 
 const listData = [];
@@ -14,19 +14,19 @@ for (let i = 0; i < 23; i++) {
 }
 
 
-class AllFeedsView extends Component {
+class NewsView extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			All: []
+			News: []
 		}
 	}
 
 	componentDidMount(){
-		axios.get('http://localhost:8000/api/ChanelAll')
+		axios.get('http://localhost:8000/api/NewsFeeds')
 		.then(res => {
 			this.setState({
-				All: res.data
+				News: res.data
 			});
 			console.log(res.data);
 		});
@@ -35,9 +35,9 @@ class AllFeedsView extends Component {
 
 	render(){
 		return(
-			<AllFeeds data={this.state.All}/>
+			<NewsFeeds data={this.state.News}/>
 		)
 	}
 }
 
-export default AllFeedsView;
+export default NewsView;

@@ -3,12 +3,12 @@ from .models import RSSfeed
 from .serializers import RSSfeedSerializer
 from rest_framework import generics
 
-class ChannelList(generics.ListCreateAPIView): 
-	queryset = RSSfeed.objects.values('category') #nije dobro
+class ChanelAll(generics.ListCreateAPIView): 
+	queryset = RSSfeed.objects.all()
 	serializer_class = RSSfeedSerializer
 
-class AllFeeds(generics.ListCreateAPIView):
-	queryset = RSSfeed.objects.all()
+class NewsFeeds(generics.ListCreateAPIView):
+	queryset = RSSfeed.objects.filter(category="Vijesti")
 	serializer_class = RSSfeedSerializer
 
 class SportFeeds(generics.ListCreateAPIView):

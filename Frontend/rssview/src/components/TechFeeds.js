@@ -26,7 +26,7 @@ const TechFeeds = (props) => {
 	      <List.Item
 	        key={item.title}
 	        actions={[<IconText  text={item.creator} />]}
-	        extra={<img width={272} alt="logo" src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png" />}
+	        extra={<img width={272} alt="logo" src={item.img} />}
 	      >
 	        <List.Item.Meta
 	          title={<a href={item.link}>{item.title}</a>}

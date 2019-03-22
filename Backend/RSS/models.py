@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import html.parser
 
-aktualno = requests.get('https://www.24sata.hr/feeds/aktualno.xml')
+news = requests.get('https://www.24sata.hr/feeds/news.xml')
 sport = requests.get('https://www.24sata.hr/feeds/sport.xml')
 show = requests.get('https://www.24sata.hr/feeds/show.xml')
 tech = requests.get('https://www.24sata.hr/feeds/tech.xml')
@@ -28,13 +28,13 @@ for item in items:
     link = item.link.text
     pubDate = item.pubDate.text
     h = html.parser.HTMLParser()
-    d = BeautifulSoup(h.unescape(item.description.string))
-    slika = d.img['src']
-    a = RSSfeed.objects.create(category=category, title=title, creator=creator, description=description, link=link, pubDate=pubDate, img=slika)
+    i = BeautifulSoup(h.unescape(item.description.string))
+    img = i.img['src']
+    a = RSSfeed.objects.create(category=category, title=title, creator=creator, description=description, link=link, pubDate=pubDate, img=img)
     a.save()
 
-soupAktualno = BeautifulSoup(aktualno.content, features="xml")
-items = soupAktualno.findAll('item')
+soupNews = BeautifulSoup(news.content, features="xml")
+items = soupNews.findAll('item')
 for item in items:
     category = item.category.text
     title = item.title.text
@@ -42,7 +42,10 @@ for item in items:
     description = item.description.text
     link = item.link.text
     pubDate = item.pubDate.text
-    b = RSSfeed.objects.create(category=category, title=title, creator=creator, description=description, link=link, pubDate=pubDate)
+    h = html.parser.HTMLParser()
+    i = BeautifulSoup(h.unescape(item.description.string))
+    img = i.img['src']
+    b = RSSfeed.objects.create(category=category, title=title, creator=creator, description=description, link=link, pubDate=pubDate, img=img)
     b.save()
 
 soupShow = BeautifulSoup(show.content, features="xml")
@@ -54,7 +57,10 @@ for item in items:
     description = item.description.text
     link = item.link.text
     pubDate = item.pubDate.text
-    c = RSSfeed.objects.create(category=category, title=title, creator=creator, description=description, link=link, pubDate=pubDate)
+    h = html.parser.HTMLParser()
+    i = BeautifulSoup(h.unescape(item.description.string))
+    img = i.img['src']
+    c = RSSfeed.objects.create(category=category, title=title, creator=creator, description=description, link=link, pubDate=pubDate, img=img)
     c.save()
 
 soupTech = BeautifulSoup(tech.content, features="xml")
@@ -66,5 +72,8 @@ for item in items:
     description = item.description.text
     link = item.link.text
     pubDate = item.pubDate.text
-    d = RSSfeed.objects.create(category=category, title=title, creator=creator, description=description, link=link, pubDate=pubDate)
+    h = html.parser.HTMLParser()
+    i = BeautifulSoup(h.unescape(item.description.string))
+    img = i.img['src']
+    d = RSSfeed.objects.create(category=category, title=title, creator=creator, description=description, link=link, pubDate=pubDate, img=img)
     d.save()
