@@ -7,6 +7,7 @@ import NewsView from '../containers/NewsView';
 import SportView from '../containers/SportView';
 import ShowView from '../containers/ShowView';
 import TechView from '../containers/TechView';
+import Search from '../containers/Search';
 
 const { Header, Content, Footer } = Layout;
 
@@ -58,6 +59,7 @@ class Home extends Component{
     </Header>
     <Content style={{ padding: '0 50px' }}>
       <Breadcrumb style={{ margin: '16px 0' }}>
+        <Search/>
       </Breadcrumb>
       <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
       	{this.state.news ? <NewsView/> : null}
