@@ -1,6 +1,6 @@
-Django~=2.1.7
-beautifulSoup4~=4.7.1
-requests~=2.21.0
-lxml~=4.3.2
-djangorestframework~=3.9.2
-django-cors-headers~=2.5.2
+Django==2.1.7
+beautifulSoup4==4.7.1
+requests==2.21.0
+lxml==4.3.2
+djangorestframework==3.9.2
+django-cors-headers==2.5.2
