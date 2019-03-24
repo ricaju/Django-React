@@ -15,5 +15,4 @@
 
 
 ### `Napomene`
- Za frontend dizajn u Reactu sam koristio "AntD"
- U "masteru" trenutno povezujem frontend i backend na drugi način (konfiguracijom webpack servera i babela)
+ Za frontend dizajn u Reactu sam koristio "AntD". U "masteru" trenutno povezujem frontend i backend na drugi način (konfiguracijom webpack servera i babela)
