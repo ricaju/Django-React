@@ -18,7 +18,7 @@ for item in items:
     category = item.category.text
     title = item.title.text
     creator = item.creator.text
-    description_soup = BeautifulSoup(item.description.text, features="xml")
+    description_soup = BeautifulSoup(item.description.text)
     description = description_soup.text
     link = item.link.text
     pubDate = item.pubDate.text
@@ -34,7 +34,7 @@ for item in items:
     category = item.category.text
     title = item.title.text
     creator = item.creator.text
-    description_soup = BeautifulSoup(item.description.text, features="xml")
+    description_soup = BeautifulSoup(item.description.text)
     description = description_soup.text
     link = item.link.text
     pubDate = item.pubDate.text
@@ -50,8 +50,7 @@ for item in items:
     category = item.category.text
     title = item.title.text
     creator = item.creator.text
-    description_soup = BeautifulSoup(item.description.text, features="xml")
-    description = description_soup.text
+    description_soup = BeautifulSoup(item.description.text)
     link = item.link.text
     pubDate = item.pubDate.text
     h = html.parser.HTMLParser()
@@ -66,7 +65,7 @@ for item in items:
     category = item.category.text
     title = item.title.text
     creator = item.creator.text
-    description_soup = BeautifulSoup(item.description.text, features="xml")
+    description_soup = BeautifulSoup(item.description.text)
     description = description_soup.text
     link = item.link.text
     pubDate = item.pubDate.text

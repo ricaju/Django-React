@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class RSSfeed(models.Model):
 	category = models.CharField(max_length=200)
 	title = models.CharField(max_length=200)
