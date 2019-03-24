@@ -11,7 +11,7 @@ class Search extends Component {
 	}
 
 	getQuery = () => {
-		axios.get(`http://localhost:8000/api/SearchPost?q=${this.state.query}`)
+		 axios.get(`http://localhost:8000/api/SearchPost?q=${this.state.query}`)
 		.then(res => {
 			this.setState({
 				data: res.data
@@ -34,7 +34,7 @@ class Search extends Component {
 					placeholder="Search..."
 					name="q"
 					ref={input => this.search = input}
-					method="get" // razmisliti!
+					method="get" 
 					onChange={this.handelChange}
 				/>
 			</form>
