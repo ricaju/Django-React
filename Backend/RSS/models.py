@@ -6,6 +6,6 @@ class RSSfeed(models.Model):
 	creator = models.CharField(max_length=200)
 	description = models.TextField()
 	link = models.CharField(max_length=300)
-	pubDate = models.DateTimeField(blank=True, null=True, auto_now_add = True)
+	pubDate = models.CharField(max_length=300, null=True)
 	img = models.CharField(max_length=400)
 

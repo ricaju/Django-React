@@ -3,10 +3,10 @@ import { List, Icon } from 'antd';
 
 
 
-const IconText = ({ type, text }) => (
+const IconText = ({ type, text, time }) => (
   <span>
     <Icon type={type} style={{ marginRight: 8 }} />
-    {text}
+    {text} {time}
   </span>
 );
 
@@ -21,11 +21,10 @@ const AllFeeds = (props) => {
 	      pageSize: 10,
 	    }}
 	    dataSource={props.data}
-	    footer={<div><b>ant design</b> footer part</div>}
 	    renderItem={item => (
 	      <List.Item
 	        key={item.title}
-	        actions={[<IconText  text={item.creator} />]}
+	        actions={[<IconText  text={item.creator} time={item.pubDate} />]}
 	        extra={<img width={272} alt="logo" src={item.img} />}
 	      >
 	        <List.Item.Meta

@@ -18,7 +18,7 @@ for item in items:
     category = item.category.text
     title = item.title.text
     creator = item.creator.text
-    description_soup = BeautifulSoup(item.description.text)
+    description_soup = BeautifulSoup(item.description.text, features="lxml")
     description = description_soup.text
     link = item.link.text
     pubDate = item.pubDate.text
@@ -34,7 +34,7 @@ for item in items:
     category = item.category.text
     title = item.title.text
     creator = item.creator.text
-    description_soup = BeautifulSoup(item.description.text)
+    description_soup = BeautifulSoup(item.description.text, features="lxml")
     description = description_soup.text
     link = item.link.text
     pubDate = item.pubDate.text
@@ -50,7 +50,7 @@ for item in items:
     category = item.category.text
     title = item.title.text
     creator = item.creator.text
-    description_soup = BeautifulSoup(item.description.text)
+    description_soup = BeautifulSoup(item.description.text, features="lxml")
     link = item.link.text
     pubDate = item.pubDate.text
     h = html.parser.HTMLParser()
@@ -65,7 +65,7 @@ for item in items:
     category = item.category.text
     title = item.title.text
     creator = item.creator.text
-    description_soup = BeautifulSoup(item.description.text)
+    description_soup = BeautifulSoup(item.description.text, features="lxml")
     description = description_soup.text
     link = item.link.text
     pubDate = item.pubDate.text
@@ -99,7 +99,6 @@ class TechFeeds(generics.ListCreateAPIView):
 class SearchPost(generics.ListAPIView):
 	serializer_class = RSSfeedSerializer
 	model = serializer_class.Meta.model
-	paginate_by = 100
 	def get_queryset(self):
 		query = self.kwargs.get('q')  #u reactu se doći atribut s name="q"
 		if query:
