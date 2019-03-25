@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import ShowFeeds from '../components/ShowFeeds'
 import axios from 'axios';
 
-
-
 class ShowView extends Component {
 	constructor(props){
 		super(props);
@@ -18,7 +16,6 @@ class ShowView extends Component {
 			this.setState({
 				Show: res.data
 			});
-			console.log(res.data);
 		});
 	}
 

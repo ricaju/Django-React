@@ -1,8 +1,6 @@
 import React from 'react';
 import { List, Icon } from 'antd';
 
-
-
 const IconText = ({ type, text, time }) => (
   <span>
     <Icon type={type} style={{ marginRight: 8 }} />
@@ -30,7 +28,6 @@ const AllFeeds = (props) => {
 	        <List.Item.Meta
 	          title={<a href={item.link}>{item.title}</a>}
 	          description={item.category}
-	          pubdate={item.pubDate}
 	        />
 	        {item.description}
 	      </List.Item>

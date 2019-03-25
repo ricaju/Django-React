@@ -100,10 +100,10 @@ class SearchPost(generics.ListAPIView):
 	serializer_class = RSSfeedSerializer
 	model = serializer_class.Meta.model
 	def get_queryset(self):
-		query = self.kwargs.get('q')  #u reactu se doći atribut s name="q"
+		query = self.kwargs.get('q')  #q u reactu
 		if query:
 			return self.model.objects.filter(
-				Q(category=query)|   #Q LOOKUP u djangu
+				Q(category=query)|   
 				Q(title=query)|
 				Q(creator=query)
 				).distinct()

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import SportFeeds from '../components/SportFeeds'
 import axios from 'axios';
 
-
 class SportView extends Component {
 	constructor(props){
 		super(props);
@@ -17,7 +16,6 @@ class SportView extends Component {
 			this.setState({
 				Sport: res.data
 			});
-			console.log(res.data);
 		});
 	}
 

@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import TechFeeds from '../components/TechFeeds'
 import axios from 'axios';
 
-
-
 class TechView extends Component {
 	constructor(props){
 		super(props);
@@ -18,7 +16,6 @@ class TechView extends Component {
 			this.setState({
 				Tech: res.data
 			});
-			console.log(res.data);
 		});
 	}
 

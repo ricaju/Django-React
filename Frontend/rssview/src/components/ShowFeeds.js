@@ -30,7 +30,6 @@ const ShowFeeds = (props) => {
 	        <List.Item.Meta
 	          title={<a href={item.link}>{item.title} </a>}
 	          description={item.category}
-	          pubdate={item.pubDate}
 	        />
 	        {item.description}
 	      </List.Item>
