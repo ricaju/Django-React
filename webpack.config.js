@@ -16,10 +16,10 @@ module.exports = {
     publicPath: 'http://localhost:3000/frontend/static/frontend/bundles/',  //ovo bi trebalo overridati static_url iz djanga
   },
 
-  modules: {
+  module: {
     rules: [
       {
-        test: /\.jsx$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader"
@@ -34,5 +34,5 @@ module.exports = {
 
   devServer: {
     contentBase: './frontend/static/frontend/bundles/',
-  }
+  },
 };
