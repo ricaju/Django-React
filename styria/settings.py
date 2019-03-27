@@ -30,6 +30,13 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundles',
+        'STATS_FILE': os.path.join(BASE_DIR, './frontend/webpack-stats.json'), #WB-stats.json path
+    }
+}
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,7 +47,7 @@ INSTALLED_APPS = [
     'RSS.apps.RssConfig',
     'rest_framework',
     'webpack_loader',
-    'frontend'
+    'Frontend',
 ]
 
 MIDDLEWARE = [
@@ -122,11 +129,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = (
-    os.path.join(BASE_DIR, 'static'), 
-
-WEBPACK_LOADER = {
-    'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'bundles/',
-        'STATS_FILE': os.path.join(BASE_DIR, './frontend/webpack-stats.json'), #WB-stats.json path
-    }
-}
+    os.path.join(BASE_DIR, 'Frontend/static/') 
+)

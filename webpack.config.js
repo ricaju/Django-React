@@ -6,14 +6,14 @@ module.exports = {
   mode: 'development',
 
   entry: {
-    main: './frontend/src/index.js',  //ulaz
+    main: './Frontend/src/index.js',  //ulaz
     server: 'webpack-dev-server/client?http://localhost:3000' 
   },
 
   output: {
     filename: "[name].js",
-    path: path.resolve('./frontend/static/frontend/bundles/'), //izlaz, stvara file bundles
-    publicPath: 'http://localhost:3000/frontend/static/frontend/bundles/',  //ovo bi trebalo overridati static_url iz djanga
+    path: path.resolve('./Frontend/static/frontend/bundles/'), //izlaz, stvara file bundles
+    publicPath: 'http://localhost:3000/Frontend/static/frontend/bundles/',  //ovo bi trebalo overridati static_url iz djanga
   },
 
   module: {
@@ -29,10 +29,10 @@ module.exports = {
   },
 
   plugins: [  
-    new BundleTracker({filename: './frontend/webpack-stats.json'}),
+    new BundleTracker({filename: './Frontend/webpack-stats.json'}),
   ],
 
   devServer: {
-    contentBase: './frontend/static/frontend/bundles/',
+    contentBase: './Frontend/static/frontend/bundles/',
   },
 };
