@@ -4,7 +4,7 @@ class App extends Component {
 	render(){
 		console.log("blblbl88888")
 		return (
-			<h1>TESSSST </h1>
+			<h1>radi </h1>
 		)
 	}
 }
